@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="linearBg">#292d36</color>
+    <color name="cardBackground">#272b33</color>
+    <color name="resultTextColor">#ffffff</color>
+</resources>

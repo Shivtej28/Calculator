@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="10dp"
+        android:padding="3dp"
+         app:cardBackgroundColor="@color/cardBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/lightMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_light"
+                android:layout_marginEnd="3dp"
+                android:padding="4dp"/>
+
+            <ImageView
+                android:id="@+id/darkMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dark"
+                android:padding="4dp"
+                android:layout_marginStart="3dp"/>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvOutput"
+        android:gravity="end"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="22sp"
+        android:letterSpacing="0.2"/>
+
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        android:gravity="end"
+        android:textColor="@color/resultTextColor"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:textSize="50sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcAllClear"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:cardElevation="3dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="AC"
+                    android:textColor="#88f9e4"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBracket"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="( )"
+                    android:layout_gravity="center"
+                    android:textColor="#88f9e4"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnPercent"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:layout_gravity="center"
+                    android:textColor="#88f9e4"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnDiv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvDiv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:layout_gravity="center"
+                    android:textColor="#ed8282"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn7"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn8"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn9"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnMultiply"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvMultiply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#ed8282"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn6"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnSubtract"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvSubtract"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#ed8282"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnAdd"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_gravity="center"
+                    android:textColor="#ed8282"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn0"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnDot"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnEqual"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+
+                 app:cardBackgroundColor="@color/cardBackground"
+                app:cardCornerRadius="10dp"
+                >
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="="
+                    android:layout_gravity="center"
+                    android:textColor="#ed8282"
+                    android:padding="5dp"
+                    android:textSize="27sp"
+                    android:layout_margin="10dp"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
